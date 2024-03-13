@@ -16,13 +16,15 @@ for idx, number in enumerate(numbers):
 
 ### C++ Code
 ```c++
-unordered_map<int, int> index_mapping;
-
-for (int idx = 0; idx < nums.size(); ++idx) {
-  if (const auto it = index_mapping.find(target - nums[idx]);
-      it != index_mapping.cend())
-    return {it->second, idx};
-  index_mapping[nums[idx]] = idx;
+vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> index_mapping;
+    for (int idx = 0; idx < nums.size(); ++idx) {
+        if (const auto it = index_mapping.find(target - nums[idx]);
+            it != index_mapping.cend())
+            return {it->second, idx};
+        index_mapping[nums[idx]] = idx;
+    }
+    throw;
 }
 ```
 
