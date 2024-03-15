@@ -8,7 +8,7 @@ We can solve this efficiently using a hashmap. We'll iterate through the array, 
 ```python
 index_mapping = {}
 
-for idx, number in enumerate(numbers):
+for idx, number in enumerate(nums):
     if target - number in index_mapping:
         return index_mapping[target - number], idx
     index_mapping[number] = idx
